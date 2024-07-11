@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-//Variables
+//MACRO
+#define double(x) (x*2)
 
-//Declaration + initialization together
-
-    //Constants (Uppercase)
+//Constants (Uppercase)
     const float PI = 3.14;
 
 /*Basic data types:
@@ -56,6 +56,8 @@ Matrices:
      %lld   // long long int
      %llu   // unsigned long long int
 
+     %p     // address
+
      %.1~   // decimal precision
      %-~    // left align
      %1~    // min field width
@@ -63,33 +65,35 @@ Matrices:
 
 /*Logical operators:
 
-    &&  //and
-    ||  //or
-    !~  //not
+    &&  // and
+    ||  // or
+    !~  // not
 
 */
 
 /*Bitwise operators:
 
-    &   //and
-    |   //or
-    ^   //xor
-    << 1 //left shift 1 posizione, se fatta su numero unsigned è num*(2^1)
-    >> 1 //right shift 1 pos., come sopra ma num/(2^1)
+    &   // and
+    |   // or
+    ^   // xor
+    << 1 // left shift 1 posizione, se fatta su numero unsigned è num*(2^1)
+    >> 1 // right shift 1 pos., come sopra ma num/(2^1)
 
 */
 
 /*Math functions: (need math.h)
 
-    sqrt(9)     //square root
-    pow(2, 4)   //power -> 2^4
+    sqrt(9)     // square root
+    cbrt(16)    // cube root
 
-    round(3.14) //round
-    ceil(3.14)  //excess round
-    floor(3.99) //opposite of ceil()
+    pow(2, 4)   // power -> 2^4
 
-    fabs(-100)  //absolute value
-    log(3)      //logarithm
+    round(3.14) // round
+    ceil(3.14)  // excess round
+    floor(3.99) // opposite of ceil()
+
+    fabs(-100)  // absolute value
+    log(3)      // logarithm
 
     sin(45)
     cos(45)
@@ -99,29 +103,29 @@ Matrices:
 
 /*String functions: (need string.h)
 
-    strlwr(s1)              //lowercase s1
-    strupr(s1)              //uppercase s1
+    strlwr(s1)              // lowercase s1
+    strupr(s1)              // uppercase s1
 
-    strcat(s1, s2)          //append s2 to s1
-    strncat(s1, s2, 1)      //same but with the first n char.
+    strcat(s1, s2)          // append s2 to s1
+    strncat(s1, s2, 1)      // same but with the first n char.
 
-    strcpy(s1, s2)          //copy s2 to s1
-    strncpy(s1, s2, 2)      //same but with the first n char.
+    strcpy(s1, s2)          // copy s2 to s1
+    strncpy(s1, s2, 2)      // same but with the first n char.
 
-    strset(s1, '?');        //set all char. of s1 to ?
-    strnset(s1, 'x', 1)     //same but with the first n char.
+    strset(s1, '?');        // set all char. of s1 to ?
+    strnset(s1, 'x', 1)     // same but with the first n char.
 
-    strrev(s1);             //reverse s1
+    strrev(s1);             // reverse s1
 
-    strlen(s1)              //s1 length
+    strlen(s1)              // s1 length
 
-    //The next functions return 0 if true
+    The next functions return 0 if true
 
-    strcmp(s1, s2);         //compare s1 and s2
-    strncmp(s1, s2, 1)      //same but with the first n char.
+    strcmp(s1, s2);         // compare s1 and s2
+    strncmp(s1, s2, 1)      // same but with the first n char.
 
-    strcmpi(s1, s2)         //These 2 are equal to the previous
-    strnicmp(s1, s2, 1)     //but case insensitive
+    strcmpi(s1, s2)         // These 2 are equal to the previous
+    strnicmp(s1, s2, 1)     // but case insensitive
 
 */
 
@@ -159,8 +163,8 @@ Matrices:
 
         -do{}while(i%2 == 0);
 
-        break       //exit the loop
-        continue    //skip to next iteration
+        break       // exit the loop
+        continue    // skip to next iteration
 */
 
 /*Structs:
@@ -186,6 +190,14 @@ x.side = 4;
         double really_big;
     };
 
+Can contain all of the declared values but only once at 
+a time
+*/
+
+/*Enums:
+
+    enum Day{Monday,Tuesday,Wednesday};
+
 */
 
 /*Typedef:
@@ -206,8 +218,62 @@ x.side = 4;
         s25 x; a string of 25 chars
 */
 
+// Pointers: int *pX = &x;
+// To access members of struct with a pointer use x->member
+
 //Function prototype
 // int double(int);
+
+
+//Files
+void foo() {
+
+    /*
+        w = write
+        a = append
+        r = read
+    
+    */
+    FILE *pF = fopen("a.txt","w");
+
+    // check if file exist
+    if(pF == NULL)
+    {
+        printf("Can't open file.\n");
+        return;
+    }
+
+    // write into file
+    fprintf(pF,"cbtrb");
+
+    char buf[20];
+
+    // read from file
+    fgets(buf,20,pF);
+
+    // close file
+    fclose(pF);
+
+    return;
+
+}
+
+//Dynamic memory allocation (need stdlib.h)
+void foo2() {
+
+    // array of 20 ints
+    int *ptr = (int*)malloc(20*sizeof(int)); 
+
+    // array of 20 ints set to 0
+    int *ptr2 = (int*)calloc(20,sizeof(int)); 
+
+    // reallocate memory
+    ptr = realloc(ptr,27*sizeof(int));
+
+    free(ptr);
+    free(ptr2);
+
+}
 
 int main() {
 
@@ -215,6 +281,8 @@ int main() {
 
     scanf("%5s",&txt);
     printf("\n%s\n",txt);
+
+    printf("%d\n",double(4));
 
     return 0;
 }
