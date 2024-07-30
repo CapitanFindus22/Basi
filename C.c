@@ -9,7 +9,7 @@ const float PI = 3.14;
 
 /*Basic data types:
 
-    Data Types	            Memory Size	                 Range 
+    Data Types	            Memory Size	        Range 
     
     char	              1 byte	        −128 to 127                
     unsigned char	      1 byte	        0 to 255
@@ -22,9 +22,9 @@ const float PI = 3.14;
     long int	              4 byte 		-2,147,483,648 to 2,147,483,647
     unsigned long int	      4 byte	   	0 to 4,294,967,295
 
-    float	              4 byte	
-    double	              8 byte	
-    long double	             10 byte	
+    float	              4 byte		1.2E-38 to 3.4E+38 		6 decimal places
+    double	              8 byte		2.3E-308 to 1.7E+308		15 decimal places
+    long double	             10 byte		3.4E-4932 to 1.1E+4932		19 decimal places
 
     bool                      1 byte <-- need stdbool.h
 */
@@ -173,7 +173,7 @@ To create a set of constants
         s25 x; a string of 25 chars
 */
 
-// Pointers: int *pX = &x;
+//Pointers: int *pX = &x;
 // To access members of struct with a pointer use x->member
 // An array can be accessed also as a pointer
 
