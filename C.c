@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 //MACRO
-#define double(x) (x*2)
+#define double(x)(x *2)
 
 //Constants (Uppercase)
-    const float PI = 3.14;
+const float PI = 3.14;
 
 /*Basic data types:
 
@@ -25,7 +25,7 @@
     double	              8 byte	
     long double	          10 byte	
 
-    bool                  1 byte <- need stdbool.h
+    bool                  1 byte < - need stdbool.h
 */
 
 /*Arrays:
@@ -34,12 +34,14 @@
 
     -int x[] = {1,2,3}
 
-Matrices:
+*/
+
+/*Matrices:
 
     -int x[2][2];
 
     -int x[][] = {
-                  {1,2,3},
+		{1,2,3},
                   {4,5,6}
                  };
 
@@ -47,85 +49,37 @@ Matrices:
 
 /*Format specifiers:
 
-     %c     // char
-     %s     // character array
-     %f     // float
-     %lf    // double
-     %d     // int,unsigned short,short,(bool,char,unsigned char) <- as numbers
-     %u     // unsigned int
-     %lld   // long long int
-     %llu   // unsigned long long int
+     %c    	// char
+     %s    	// character array
+     %f    	// float
+     %lf   	// double
+     %d    	// int,unsigned short,short,(bool,char,unsigned char) < - as numbers
+     %u    	// unsigned int
+     %lld  	// long long int
+     %llu  	// unsigned long long int
 
-     %p     // address
+     %p    	// address
 
-     %.1~   // decimal precision
-     %-~    // left align
-     %1~    // min field width
+     %.1~  	// decimal precision
+     %-~   	// left align
+     %1~   	// min field width
 */
 
 /*Logical operators:
 
-    &&  // and
-    ||  // or
-    !~  // not
+    && 	// and
+    || 	// or
+    !~ 	// not
 
 */
 
 /*Bitwise operators:
 
-    &   // and
-    |   // or
-    ^   // xor
-    << 1 // left shift 1 posizione, se fatta su numero unsigned è num*(2^1)
-    >> 1 // right shift 1 pos., come sopra ma num/(2^1)
-
-*/
-
-/*Math functions: (need math.h)
-
-    sqrt(9)     // square root
-    cbrt(16)    // cube root
-
-    pow(2, 4)   // power -> 2^4
-
-    round(3.14) // round
-    ceil(3.14)  // excess round
-    floor(3.99) // opposite of ceil()
-
-    fabs(-100)  // absolute value
-    log(3)      // logarithm
-
-    sin(45)
-    cos(45)
-    tan(45)
-
-*/
-
-/*String functions: (need string.h)
-
-    strlwr(s1)              // lowercase s1
-    strupr(s1)              // uppercase s1
-
-    strcat(s1, s2)          // append s2 to s1
-    strncat(s1, s2, 1)      // same but with the first n char.
-
-    strcpy(s1, s2)          // copy s2 to s1
-    strncpy(s1, s2, 2)      // same but with the first n char.
-
-    strset(s1, '?');        // set all char. of s1 to ?
-    strnset(s1, 'x', 1)     // same but with the first n char.
-
-    strrev(s1);             // reverse s1
-
-    strlen(s1)              // s1 length
-
-    The next functions return 0 if true
-
-    strcmp(s1, s2);         // compare s1 and s2
-    strncmp(s1, s2, 1)      // same but with the first n char.
-
-    strcmpi(s1, s2)         // These 2 are equal to the previous
-    strnicmp(s1, s2, 1)     // but case insensitive
+    &// and
+    |  	// or
+    ^  	// xor
+    << 1	// left shift 1 posizione, se fatta su numero unsigned è num*(2^1)
+    >> 1	// right shift 1 pos., come sopra ma num/(2^1)
 
 */
 
@@ -133,38 +87,38 @@ Matrices:
 
     1) Conditions:
 
-        -if(){}
+        - if(){}
 
-        -if(){}
-         else{}
+        - if(){}
+          else{}
 
-        -if(){}
-         else if{}
-         else{}
+        - if(){}
+          else if{}
+          else{}
 
-        -switch()
-         {
+        - switch()
+          {
             case 'A': 
             something;
             break;
 
             default:
             something;           
-         
-         }
 
-        -ternary op. example-> int max = (x>y)? x:y;
-         
+          }
+
+        - ternary operator (condition)? do_this_if_true : do_this_if_false ;
+
     2) Loops:
 
-        -for(int i=0;i<5;i++){}
+        - for(int i=0;i < 5;i++){}
 
-        -while(len<10){len++;}
+        - while(len < 10){len++;}
 
-        -do{}while(i%2 == 0);
+        - do{}while(i%2 == 0);
 
-        break       // exit the loop
-        continue    // skip to next iteration
+        break      	// exit the loop
+        continue   	// skip to next iteration
 */
 
 /*Structs:
@@ -183,26 +137,26 @@ x.side = 4;
 
 /*Unions:
 
-    union numero
+    union number
     {
         short small;
         long big;
         double really_big;
     };
 
-Can contain all of the declared values but only once at 
-a time
+Can contain all of the declared values but only one at a time
 */
 
 /*Enums:
 
-    enum Day{Monday,Tuesday,Wednesday};
+ enum weekday {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday};
 
+To create a set of constants
 */
 
 /*Typedef:
 
-    -on a struct or union
+    - on a struct or union
 
         typedef struct 
         {
@@ -213,76 +167,79 @@ a time
 
         Square x;
 
-    -in general -> typedef char s25[25];
+    - in general -> typedef char s25[25];
 
         s25 x; a string of 25 chars
 */
 
 // Pointers: int *pX = &x;
 // To access members of struct with a pointer use x->member
+// An array can be accessed also as a pointer
 
 //Function prototype
 // int double(int);
 
-
 //Files
-void foo() {
+void foo()
+{
+	/*
+	    w = write
+	    a = append
+	    r = read
 
-    /*
-        w = write
-        a = append
-        r = read
-    
-    */
-    FILE *pF = fopen("a.txt","w");
+	*/
+	FILE *pF = fopen("a.txt", "w");
 
-    // check if file exist
-    if(pF == NULL)
-    {
-        printf("Can't open file.\n");
-        return;
-    }
+	// check if file exist
+	if (pF == NULL)
+	{
+		printf("Can't open file.\n");
+		return;
+	}
 
-    // write into file
-    fprintf(pF,"cbtrb");
+	// write into file
+	fprintf(pF, "cbtrb");
 
-    char buf[20];
+	char buf[20];
 
-    // read from file
-    fgets(buf,20,pF);
+	// read from file
+	fgets(buf, 20, pF);
 
-    // close file
-    fclose(pF);
+	// close file
+	fclose(pF);
 
-    return;
+	return;
 
 }
 
 //Dynamic memory allocation (need stdlib.h)
-void foo2() {
+void foo2()
+{
+	// array of 20 ints
+	int *ptr = (int*) malloc(20* sizeof(int));
 
-    // array of 20 ints
-    int *ptr = (int*)malloc(20*sizeof(int)); 
+	// array of 20 ints set to 0
+	int *ptr2 = (int*) calloc(20, sizeof(int));
 
-    // array of 20 ints set to 0
-    int *ptr2 = (int*)calloc(20,sizeof(int)); 
+	// reallocate memory
+	ptr = realloc(ptr, 27* sizeof(int));
 
-    // reallocate memory
-    ptr = realloc(ptr,27*sizeof(int));
-
-    free(ptr);
-    free(ptr2);
+	// free memory after use
+	free(ptr);
+	free(ptr2);
 
 }
 
-int main() {
+//Memory allocated dynamically can be accessed as an array
 
-    char txt[5];
+int main()
+{
+	char txt[5];
 
-    scanf("%5s",&txt);
-    printf("\n%s\n",txt);
+	scanf("%5s", &txt);
+	printf("\n%s\n", txt);
 
-    printf("%d\n",double(4));
+	printf("%d\n", double(4));
 
-    return 0;
+	return 0;
 }
