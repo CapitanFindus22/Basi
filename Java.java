@@ -1,32 +1,46 @@
+/*Primitive types:
 
-#include <stdio.h>
-#include <stdlib.h>
+    Data Types		Memory Size	        Range 
+    
+    char	        2 byte	        	0 to 65535                
 
-//MACRO
-#define double(x)(x *2)
+    byte		1 byte			-128 to 127
+    short	        2 byte	     		−32,768 to 32,767
+    int	                4 byte	     		-2,147,483,648 to 2,147,483,647
+    long 		8 byte            	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 
-//Constants (Uppercase)
-const float PI = 3.14;
+    float	        4 byte			1.4e-45 to 3.4028235e38  		6-7 decimal digits
+    double	        8 byte			4.9e-324 to 1.7976931348623157e308 	15 decimal digits
 
-/*Basic data types:
+    boolean             1 byte
+*/
 
-    Data Types	        Memory Size	           Range     
-    char	              1 byte	        −128 to 127                
-    unsigned char	      1 byte	         0 to 255
+/*Cast:
 
-    short	              2 byte	     −32,768 to 32,767
-    unsigned short	      2 byte	       0 to 65,535
+    To change one variable from one type to another:
 
-    int	                  2 byte	     −32,768 to 32,767
-    unsigned int	      2 byte	       0 to 65,535
-    long int	          4 byte -2,147,483,648 to 2,147,483,647
-    unsigned long int	  4 byte	    0 to 4,294,967,295
+	-Esplicit conversion
 
-    float	              4 byte	
-    double	              8 byte	
-    long double	          10 byte	
+    		int a = Integer.parseInt("25");
 
-    bool                  1 byte < - need stdbool.h
+     	-Esplicit cast
+
+		int a = (int)25;
+
+  	-Implicit cast
+
+   		Automatic conversion if the starting type is less precise
+
+*/
+
+/*Strings:
+
+    	String s = "Hello";
+
+ 	Strings can be concatenated
+
+  	String a = s + "vrvsdb";
+
 */
 
 /*Arrays:
@@ -70,7 +84,7 @@ const float PI = 3.14;
 
     && 	// and
     || 	// or
-    !~ 	// not
+    ! 	// not
 
 */
 
