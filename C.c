@@ -9,23 +9,24 @@ const float PI = 3.14;
 
 /*Basic data types:
 
-    Data Types	        Memory Size	           Range     
+    Data Types	            Memory Size	                 Range 
+    
     char	              1 byte	        −128 to 127                
-    unsigned char	      1 byte	         0 to 255
+    unsigned char	      1 byte	        0 to 255
 
-    short	              2 byte	     −32,768 to 32,767
-    unsigned short	      2 byte	       0 to 65,535
+    short	              2 byte	     	−32,768 to 32,767
+    unsigned short	      2 byte	       	0 to 65,535
 
-    int	                  2 byte	     −32,768 to 32,767
-    unsigned int	      2 byte	       0 to 65,535
-    long int	          4 byte -2,147,483,648 to 2,147,483,647
-    unsigned long int	  4 byte	    0 to 4,294,967,295
+    int	                      2 byte	     	−32,768 to 32,767
+    unsigned int	      2 byte	       	0 to 65,535
+    long int	              4 byte 		-2,147,483,648 to 2,147,483,647
+    unsigned long int	      4 byte	   	0 to 4,294,967,295
 
     float	              4 byte	
     double	              8 byte	
-    long double	          10 byte	
+    long double	             10 byte	
 
-    bool                  1 byte < - need stdbool.h
+    bool                      1 byte <-- need stdbool.h
 */
 
 /*Arrays:
