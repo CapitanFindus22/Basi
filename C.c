@@ -249,12 +249,12 @@ void foo2()
 
 int main()
 {
+
+	//Get input
 	char txt[5];
 
 	scanf("%5s", &txt);
 	printf("\n%s\n", txt);
-
-	printf("%d\n", double(4));
 
 	return 0;
 }
