@@ -35,11 +35,48 @@
 
 /*Strings:
 
-    	String s = "Hello";
+    	String s = "Hi";
 
  	Strings can be concatenated
 
-  	String a = s + "vrvsdb";
+	  	String a = s + "!"; --> Hi!
+	
+	   	s.concat("!");  --> Alternative
+
+     	To append multiple strings
+
+      		Stringbuilder sb = new Stringbuilder();
+
+ 		sb.append("asdf").append("gh");
+
+   		String s_new = sb.toString();
+
+	Get the number of chars
+	
+	   	a.legnth(); --> 3
+	
+	SUbstring
+
+	 	a.charAt(1); --> i 
+	
+		a.substring(0,2); --> Hi
+	 	a.substring(1); --> i!
+
+	Find char or substring in string
+
+ 		a.indexOf('!');  --> 2
+		a.indexOf("f");  --> -1
+
+  	Replace something
+
+   		String b = a.replace("Hi","Hello");  --> Hello!
+
+     	Use equals instead of == to compare strings a.equals(b);
+
+      	Split 
+
+       		String[] arr = "1-2-3".split("-");
+ 
 
 */
 
@@ -60,24 +97,6 @@
                   {4,5,6}
                  };
 
-*/
-
-/*Format specifiers:
-
-     %c    	// char
-     %s    	// character array
-     %f    	// float
-     %lf   	// double
-     %d    	// int,unsigned short,short,(bool,char,unsigned char) < - as numbers
-     %u    	// unsigned int
-     %lld  	// long long int
-     %llu  	// unsigned long long int
-
-     %p    	// address
-
-     %.1~  	// decimal precision
-     %-~   	// left align
-     %1~   	// min field width
 */
 
 /*Logical operators:
@@ -150,49 +169,12 @@ x.side = 4;
 
 */
 
-/*Unions:
-
-    union number
-    {
-        short small;
-        long big;
-        double really_big;
-    };
-
-Can contain all of the declared values but only one at a time
-*/
-
 /*Enums:
 
  enum weekday {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday};
 
 To create a set of constants
 */
-
-/*Typedef:
-
-    - on a struct or union
-
-        typedef struct 
-        {
-            int origin_x;
-            int origin_y;
-            int side;
-        }Square;
-
-        Square x;
-
-    - in general -> typedef char s25[25];
-
-        s25 x; a string of 25 chars
-*/
-
-// Pointers: int *pX = &x;
-// To access members of struct with a pointer use x->member
-// An array can be accessed also as a pointer
-
-//Function prototype
-// int double(int);
 
 //Files
 void foo()
@@ -227,34 +209,14 @@ void foo()
 
 }
 
-//Dynamic memory allocation (need stdlib.h)
-void foo2()
+public static void main(String[] args)
 {
-	// array of 20 ints
-	int *ptr = (int*) malloc(20* sizeof(int));
 
-	// array of 20 ints set to 0
-	int *ptr2 = (int*) calloc(20, sizeof(int));
-
-	// reallocate memory
-	ptr = realloc(ptr, 27* sizeof(int));
-
-	// free memory after use
-	free(ptr);
-	free(ptr2);
-
-}
-
-//Memory allocated dynamically can be accessed as an array
-
-int main()
-{
-	char txt[5];
-
-	scanf("%5s", &txt);
-	printf("\n%s\n", txt);
-
-	printf("%d\n", double(4));
+	//Get input
+	String txt;
+	java.util.Scanner in = new java.util.Scanner();
+	
+	txt = in.nextLine();
 
 	return 0;
 }
